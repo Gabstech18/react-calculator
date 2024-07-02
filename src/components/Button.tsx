@@ -1,11 +1,11 @@
 interface ButtonProps{
-  element: string;
+  children: string;
   onClick: () => void;
 }
 
-const Button = ({element, onClick}: ButtonProps) => {
+const Button = ({children, onClick}: ButtonProps) => {
   return (
-    <div>Button</div>
+    <button className="col" onClick={onClick}>{children}</button>
   )
 }
 
