@@ -5,10 +5,10 @@ const App = () => {
   return (
     <>
       <div className="container">
-        <div className="row">
-          <Celda> Rugido</Celda>
+        <div className="block">
+          <Celda>Gruñido</Celda>
         </div>
-        <div className="row row-cols-4">
+        <div className="containerContent">
           <Button onClick={() => console.log("Hola")}>1</Button>
           <Button onClick={() => console.log("Hola")}>2</Button>
           <Button onClick={() => console.log("Hola")}>3</Button>
