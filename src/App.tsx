@@ -3,18 +3,21 @@ import Button from "./components/Button";
 import Celda from "./components/Celda";
 
 const App = () => {
-  let operator = null
+  let operator = null;
 
-  const [ mess, setConcatMess] = useState('0.');
+  const [mess, setConcatMess] = useState("0");
   const buttonClick = (val) => {
-    if(val == '.' && mess.search(".")){
-      setConcatMess(mess)
+    if (val === "." && mess.includes(".")) {
+      setConcatMess(mess);
+    } else if (val === "0" && mess[0] != "0") {
+      setConcatMess(mess + val);
+    } else if (mess === "0" && val != "."){
+      setConcatMess(val)
+    } else{
+      setConcatMess(mess + val);
     }
-    setConcatMess(mess + val);
-  }
-  const handleOperator = (val) => {
-
-  }
+  };
+  const handleOperator = (val) => {};
 
   return (
     <>
@@ -39,7 +42,6 @@ const App = () => {
           <Button onClick={() => buttonClick("0")}>0</Button>
           <Button onClick={() => handleOperator("*")}>*</Button>
           <Button onClick={() => handleOperator("=")}>=</Button>
-
         </div>
       </div>
     </>
