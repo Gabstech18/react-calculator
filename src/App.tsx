@@ -7,6 +7,9 @@ const App = () => {
 
   const [ mess, setConcatMess] = useState('0.');
   const buttonClick = (val) => {
+    if(val == '.' && mess.search(".")){
+      setConcatMess(mess)
+    }
     setConcatMess(mess + val);
   }
   const handleOperator = (val) => {
