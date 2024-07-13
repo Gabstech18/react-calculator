@@ -3,21 +3,40 @@ import Button from "./components/Button";
 import Celda from "./components/Celda";
 
 const App = () => {
-  let operator = null;
-
   const [mess, setConcatMess] = useState("0");
+  const [color, setColor] = useState("black");
+  let operators = ["+", "-", "/", "*"];
+
   const buttonClick = (val) => {
     if (val === "." && mess.includes(".")) {
       setConcatMess(mess);
     } else if (val === "0" && mess[0] != "0") {
       setConcatMess(mess + val);
-    } else if (mess === "0" && val != "."){
-      setConcatMess(val)
-    } else{
+    } else if (mess === "0" && val != ".") {
+      setConcatMess(val);
+    } else if (operators.includes(mess[0])){
+      setConcatMess(val);
+    } else {
       setConcatMess(mess + val);
     }
   };
-  const handleOperator = (val) => {};
+  const handleOperator = (operator) => {
+    if (operator === "+") {
+      setConcatMess("+");
+    }
+    if (operator === "-") {
+      setConcatMess("-");
+    }
+    if (operator === "/") {
+      setConcatMess("/");
+    }
+    if (operator === "*") {
+      setConcatMess("*");
+    }
+  };
+  
+
+
 
   return (
     <>
@@ -40,7 +59,7 @@ const App = () => {
           <Button onClick={() => handleOperator("/")}>/</Button>
           <Button onClick={() => buttonClick(".")}>.</Button>
           <Button onClick={() => buttonClick("0")}>0</Button>
-          <Button onClick={() => handleOperator("*")}>*</Button>
+          <Button onClick={() => handleOperator("*")}>x</Button>
           <Button onClick={() => handleOperator("=")}>=</Button>
         </div>
       </div>

@@ -32,9 +32,24 @@
   grid-auto-rows: minmax(100px, auto);
 }
 
-.items{
+.items {
   font-family: sans-serif;
   font-weight: bold;
   font-size: 20px;
+}
 
+.back-black {
+  background: black;
+}
+
+.back-gray {
+  background: gray;
+}
+
+.back-green {
+  background: green;
+}
+
+.back-red {
+  background: red;
 }
