@@ -5,13 +5,13 @@ import Celda from "./components/Celda";
 const App = () => {
   const [mess, setConcatMess] = useState("0");
   const [numBuffer, addNumBuffer] = useState(0);
-  const [operatorClicked, setOperatorClicked] = useState(false);
-  let operators = ["+", "-", "/", "*"];
+  const [operatorClicked, setOperatorClicked] = useState("");
+  let operators = ["+", "-", "/", "*", "="];
 
   const buttonClick = (val) => {
     if (operatorClicked) {
       setConcatMess(val);
-      setOperatorClicked(false);
+      setOperatorClicked("");
     } else if (val === "." && mess.includes(".")) {
       setConcatMess(mess);
     } else if (val === "0" && mess[0] != "0") {
@@ -24,23 +24,28 @@ const App = () => {
       setConcatMess(mess + val);
     }
   };
+
   const handleOperator = (operator) => {
     switch (operator) {
       case "+":
-        setOperatorClicked(true);
+        setOperatorClicked(operator);
         addNumBuffer(Number(mess));
         break;
       case "-":
-        setOperatorClicked(true);
+        setOperatorClicked(operator);
         addNumBuffer(Number(mess));
         break;
       case "*":
-        setOperatorClicked(true);
+        setOperatorClicked(operator);
         addNumBuffer(Number(mess));
         break;
       case "/":
-        setOperatorClicked(true);
+        setOperatorClicked(operator);
         addNumBuffer(Number(mess));
+        break;
+      case "=":
+        setConcatMess(String(numBuffer + Number(mess)));
+        addNumBuffer(numBuffer + Number(mess));
         break;
 
       default:
