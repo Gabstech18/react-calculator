@@ -6,12 +6,13 @@ const App = () => {
   const [mess, setConcatMess] = useState("0");
   const [numBuffer, addNumBuffer] = useState(0);
   const [operatorClicked, setOperatorClicked] = useState("");
+  const [wasOperatorClicked, setClicked] = useState(false);
   let operators = ["+", "-", "/", "*", "="];
 
   const buttonClick = (val) => {
-    if (operatorClicked) {
+    if (wasOperatorClicked) {
       setConcatMess(val);
-      setOperatorClicked("");
+      setClicked(false);
     } else if (val === "." && mess.includes(".")) {
       setConcatMess(mess);
     } else if (val === "0" && mess[0] != "0") {
@@ -30,22 +31,46 @@ const App = () => {
       case "+":
         setOperatorClicked(operator);
         addNumBuffer(Number(mess));
+        setClicked(true);
         break;
       case "-":
         setOperatorClicked(operator);
         addNumBuffer(Number(mess));
+        setClicked(true);
         break;
       case "*":
         setOperatorClicked(operator);
         addNumBuffer(Number(mess));
+        setClicked(true);
         break;
       case "/":
         setOperatorClicked(operator);
         addNumBuffer(Number(mess));
+        setClicked(true);
         break;
       case "=":
-        setConcatMess(String(numBuffer + Number(mess)));
-        addNumBuffer(numBuffer + Number(mess));
+        setClicked(true);
+        switch (operatorClicked) {
+          case "+":
+            setConcatMess(String(numBuffer + Number(mess)));
+            addNumBuffer(numBuffer + Number(mess));
+            break;
+          case "-":
+            setConcatMess(String(numBuffer - Number(mess)));
+            addNumBuffer(numBuffer - Number(mess));
+            break;
+          case "*":
+            setConcatMess(String(numBuffer * Number(mess)));
+            addNumBuffer(numBuffer * Number(mess));
+            break;
+          case "/":
+            setConcatMess(String(numBuffer / Number(mess)));
+            addNumBuffer(numBuffer / Number(mess));
+            break;
+          default:
+            break;
+        }
+        setOperatorClicked(operator);
         break;
 
       default:
