@@ -9,6 +9,22 @@ const App = () => {
   const [wasOperatorClicked, setClicked] = useState(false);
   let operators = ["+", "-", "/", "*", "="];
 
+  const handleAC = () => {
+    setConcatMess("0");
+    addNumBuffer(0);
+  };
+
+  const handleC = () => {
+    let length = mess.length;
+
+    if (length > 1) {
+      let newMess = mess.slice(0, -1);
+      setConcatMess(newMess);
+    } else {
+      setConcatMess("0");
+    }
+  };
+
   const buttonClick = (val) => {
     if (wasOperatorClicked) {
       setConcatMess(val);
@@ -85,24 +101,82 @@ const App = () => {
           <Celda>{mess}</Celda>
         </div>
         <div className="containerContent">
-          <Button onClick={() => buttonClick("1")}>1</Button>
-          <Button onClick={() => buttonClick("2")}>2</Button>
-          <Button onClick={() => buttonClick("3")}>3</Button>
-          <Button onClick={() => handleOperator("+")}>+</Button>
-          <Button onClick={() => buttonClick("4")}>4</Button>
-          <Button onClick={() => buttonClick("5")}>5</Button>
-          <Button onClick={() => buttonClick("6")}>6</Button>
-          <Button onClick={() => handleOperator("-")}>-</Button>
-          <Button onClick={() => buttonClick("7")}>7</Button>
-          <Button onClick={() => buttonClick("8")}>8</Button>
-          <Button onClick={() => buttonClick("9")}>9</Button>
-          <Button onClick={() => handleOperator("/")}>/</Button>
-          <Button onClick={() => buttonClick(".")}>.</Button>
-          <Button onClick={() => buttonClick("0")}>0</Button>
-          <Button onClick={() => handleOperator("*")}>x</Button>
-          <Button onClick={() => handleOperator("=")}>=</Button>
+          <Button
+            className="item_2g accentColor"
+            onClick={() => handleAC()}
+          >
+            AC
+          </Button>
+          <Button
+            className="items accentColor"
+            onClick={() => handleC ()}
+          >
+            C
+          </Button>
+          <Button
+            className="items accentColor"
+            onClick={() => handleOperator("/")}
+          >
+            /
+          </Button>
+          <Button className="items" onClick={() => buttonClick("1")}>
+            1
+          </Button>
+          <Button className="items" onClick={() => buttonClick("2")}>
+            2
+          </Button>
+          <Button className="items" onClick={() => buttonClick("3")}>
+            3
+          </Button>
+          <Button
+            className="items accentColor"
+            onClick={() => handleOperator("*")}
+          >
+            x
+          </Button>
+          <Button className="items" onClick={() => buttonClick("4")}>
+            4
+          </Button>
+          <Button className="items" onClick={() => buttonClick("5")}>
+            5
+          </Button>
+          <Button className="items" onClick={() => buttonClick("6")}>
+            6
+          </Button>
+          <Button
+            className="items accentColor"
+            onClick={() => handleOperator("+")}
+          >
+            +
+          </Button>
+          <Button className="items" onClick={() => buttonClick("7")}>
+            7
+          </Button>
+          <Button className="items" onClick={() => buttonClick("8")}>
+            8
+          </Button>
+          <Button className="items" onClick={() => buttonClick("9")}>
+            9
+          </Button>
+          <Button
+            className="items accentColor"
+            onClick={() => handleOperator("-")}
+          >
+            -
+          </Button>
+          <Button className="item_2g" onClick={() => buttonClick("0")}>
+            0
+          </Button>
+          <Button className="items" onClick={() => buttonClick(".")}>
+            .
+          </Button>
+          <Button
+            className="items sprAccent"
+            onClick={() => handleOperator("=")}
+          >
+            =
+          </Button>
         </div>
-        <div>{numBuffer}</div>
       </div>
     </>
   );

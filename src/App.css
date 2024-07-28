@@ -7,11 +7,17 @@
   position: relative;
   top: 20vh;
   margin: auto;
-  width: 400px;
-  border: 3px solid green;
+  width: 350px;
   font-family: sans-serif;
   font-weight: bold;
   font-size: 20px;
+  padding: 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+
+  border-radius: 30px;
+  background: #fff;
+
+  /* background: #262d37;*/
 }
 
 .block {
@@ -19,37 +25,50 @@
   justify-content: right;
   align-items: flex-end;
   height: 100px;
-  color: white;
-  background-color: black;
+  color: #262d37;
+  background-color: #fff;
   padding: 15px;
-  margin: 5px;
+  padding-bottom: 30px;
+  margin: 15px;
+  border-radius: 30px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
 .containerContent {
   margin: 5px;
+  padding: 10px;
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(100px, auto);
+  grid-gap: 7px;
 }
 
-.items {
+.items,
+.item_2g {
   font-family: sans-serif;
   font-weight: bold;
   font-size: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  background: #fff;
+  color: #262d37;
+  border-style: none;
 }
 
-.back-black {
-  background: black;
+.items {
+  height: 75px;
+  width: 75px;
 }
 
-.back-gray {
-  background: gray;
+.item_2g {
+  grid-column: span 2;
 }
 
-.back-green {
-  background: green;
+.accentColor {
+  background: #367b8a;
 }
 
-.back-red {
-  background: red;
+.sprAccent {
+  background: #ef864b;
 }
