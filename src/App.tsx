@@ -25,7 +25,7 @@ const App = () => {
     }
   };
 
-  const buttonClick = (val) => {
+  const buttonClick = (val: any) => {
     if (wasOperatorClicked) {
       setConcatMess(val);
       setClicked(false);
@@ -42,7 +42,7 @@ const App = () => {
     }
   };
 
-  const handleOperator = (operator) => {
+  const handleOperator = (operator: any) => {
     switch (operator) {
       case "+":
         setOperatorClicked(operator);
