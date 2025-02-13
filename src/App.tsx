@@ -119,14 +119,14 @@ const App = () => {
           >
             /
           </Button>
-          <Button className="items" onClick={() => buttonClick("1")}>
-            1
+          <Button className="items" onClick={() => buttonClick("7")}>
+            7
           </Button>
-          <Button className="items" onClick={() => buttonClick("2")}>
-            2
+          <Button className="items" onClick={() => buttonClick("8")}>
+            8
           </Button>
-          <Button className="items" onClick={() => buttonClick("3")}>
-            3
+          <Button className="items" onClick={() => buttonClick("9")}>
+            9
           </Button>
           <Button
             className="items accentColor"
@@ -149,14 +149,14 @@ const App = () => {
           >
             +
           </Button>
-          <Button className="items" onClick={() => buttonClick("7")}>
-            7
+          <Button className="items" onClick={() => buttonClick("1")}>
+            1
           </Button>
-          <Button className="items" onClick={() => buttonClick("8")}>
-            8
+          <Button className="items" onClick={() => buttonClick("2")}>
+            2
           </Button>
-          <Button className="items" onClick={() => buttonClick("9")}>
-            9
+          <Button className="items" onClick={() => buttonClick("3")}>
+            3
           </Button>
           <Button
             className="items accentColor"
